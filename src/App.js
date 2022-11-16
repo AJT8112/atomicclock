@@ -1,5 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import { calculateNewValue } from '@testing-library/user-event/dist/utils';
+
+const url = "https://menacingly-magnificent-spider-cloud.wayscript.cloud/"
+
+const time = fetch(url)
+  .then((response) => response.json())
+  .then((data) => data.time);
 
 function App() {
   return (
@@ -7,7 +14,8 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          The time is:
+          {time}
         </p>
         <a
           className="App-link"
